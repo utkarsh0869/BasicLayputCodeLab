@@ -7,16 +7,19 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
@@ -24,6 +27,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -76,7 +80,8 @@ fun AlignYourBodyElement(
             painter = painterResource(id = R.drawable.ab1_inversions),
             contentDescription = null,
             contentScale = ContentScale.Crop,
-            modifier = Modifier.size(88.dp)
+            modifier = Modifier
+                .size(88.dp)
                 .clip(CircleShape)
         )
         Text(
@@ -92,7 +97,27 @@ fun AlignYourBodyElement(
 fun FavoriteCollectionCard(
     modifier: Modifier = Modifier
 ) {
-    // Implement composable here
+    Surface(
+        shape = MaterialTheme.shapes.small,
+        modifier = modifier
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.width(255.dp)
+        ) {
+           Image(
+               painter = painterResource(id = R.drawable.fc2_nature_meditations),
+               contentDescription = null,
+               contentScale = ContentScale.Crop,
+               modifier = Modifier.size(80.dp)
+           )
+           Text(
+               text = stringResource(id = R.string.fc2_nature_meditations),
+               style = MaterialTheme.typography.titleMedium,
+               modifier = Modifier.padding(horizontal = 16.dp)
+           )
+        }
+    }
 }
 
 // Step: Align your body row - Arrangements
@@ -178,13 +203,13 @@ private data class DrawableStringPair(
     @StringRes val text: Int
 )
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, backgroundColor = 0xFF7A7674)
 @Composable
 fun SearchBarPreview() {
     MySootheTheme { SearchBar(Modifier.padding(8.dp)) }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, backgroundColor = 0xFF7A7674)
 @Composable
 fun AlignYourBodyElementPreview() {
     MySootheTheme {
@@ -194,7 +219,7 @@ fun AlignYourBodyElementPreview() {
     }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, backgroundColor = 0xFF7A7674)
 @Composable
 fun FavoriteCollectionCardPreview() {
     MySootheTheme {
@@ -204,37 +229,37 @@ fun FavoriteCollectionCardPreview() {
     }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, backgroundColor = 0xFF7A7674)
 @Composable
 fun FavoriteCollectionsGridPreview() {
     MySootheTheme { FavoriteCollectionsGrid() }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, backgroundColor = 0xFF7A7674)
 @Composable
 fun AlignYourBodyRowPreview() {
     MySootheTheme { AlignYourBodyRow() }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, backgroundColor = 0xFF7A7674)
 @Composable
 fun HomeSectionPreview() {
     MySootheTheme { HomeSection() }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, backgroundColor = 0xFF7A7674)
 @Composable
 fun ScreenContentPreview() {
     MySootheTheme { HomeScreen() }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, backgroundColor = 0xFF7A7674)
 @Composable
 fun BottomNavigationPreview() {
     MySootheTheme { SootheBottomNavigation(Modifier.padding(top = 24.dp)) }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, backgroundColor = 0xFF7A7674)
 @Composable
 fun NavigationRailPreview() {
     MySootheTheme { SootheNavigationRail() }
