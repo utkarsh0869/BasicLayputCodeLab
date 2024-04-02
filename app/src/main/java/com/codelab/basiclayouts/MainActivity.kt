@@ -277,7 +277,10 @@ fun MySootheAppPortrait() {
 // Step: Bottom navigation - Material
 @Composable
 private fun SootheNavigationRail(modifier: Modifier = Modifier) {
-    NavigationRail {
+    NavigationRail(
+        // Added padding at the start and end of the rail
+        modifier = modifier.padding(start = 8.dp, end = 8.dp)
+    ) {
         Column {
             NavigationRailItem(
                 selected = true,
