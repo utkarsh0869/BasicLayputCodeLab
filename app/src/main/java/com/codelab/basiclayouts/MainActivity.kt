@@ -279,7 +279,11 @@ fun MySootheAppPortrait() {
 private fun SootheNavigationRail(modifier: Modifier = Modifier) {
     NavigationRail(
         // Added padding at the start and end of the rail
-        modifier = modifier.padding(start = 8.dp, end = 8.dp)
+        modifier = modifier.padding(start = 8.dp, end = 8.dp),
+        // Update the background color of the navigation rail by setting its containerColor
+        // parameter using the background color from the Material Theme, which changes the color
+        // of the icons and texts automatically adapts to the onBackground color of the theme.
+        containerColor = MaterialTheme.colorScheme.background
     ) {
         Column {
             NavigationRailItem(
