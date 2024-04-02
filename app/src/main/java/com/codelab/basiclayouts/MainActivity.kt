@@ -7,6 +7,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -325,11 +326,15 @@ private fun SootheNavigationRail(modifier: Modifier = Modifier) {
 // Step: Landscape Mode
 @Composable
 fun MySootheAppLandscape() {
-    // However, for the landscape we need to use a Row and place the navigation rail and screen
-    // content next to each other.
-    Row {
-        SootheNavigationRail()
-        HomeScreen()
+    MySootheTheme {
+        Surface(color = MaterialTheme.colorScheme.background) {
+            // However, for the landscape we need to use a Row and place the navigation rail and screen
+            // content next to each other.
+            Row {
+                SootheNavigationRail()
+                HomeScreen()
+            }
+        }
     }
 }
 
