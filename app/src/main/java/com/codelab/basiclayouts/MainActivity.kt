@@ -324,8 +324,13 @@ private fun SootheNavigationRail(modifier: Modifier = Modifier) {
 
 // Step: Landscape Mode
 @Composable
-fun MySootheAppLandscape(){
-    // Implement composable here
+fun MySootheAppLandscape() {
+    // However, for the landscape we need to use a Row and place the navigation rail and screen
+    // content next to each other.
+    Row {
+        SootheNavigationRail()
+        HomeScreen()
+    }
 }
 
 // Step: MySoothe App
