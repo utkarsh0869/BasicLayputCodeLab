@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
@@ -285,7 +286,11 @@ private fun SootheNavigationRail(modifier: Modifier = Modifier) {
         // of the icons and texts automatically adapts to the onBackground color of the theme.
         containerColor = MaterialTheme.colorScheme.background
     ) {
-        Column {
+        Column(
+            modifier = modifier.fillMaxHeight(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
             NavigationRailItem(
                 selected = true,
                 onClick = { /*TODO*/ },
@@ -299,7 +304,7 @@ private fun SootheNavigationRail(modifier: Modifier = Modifier) {
                     Text(text = stringResource(id = R.string.bottom_navigation_home))
                 }
             )
-
+            Spacer(modifier = Modifier.height(8.dp))
             NavigationRailItem(
                 selected = true,
                 onClick = { /*TODO*/ },
